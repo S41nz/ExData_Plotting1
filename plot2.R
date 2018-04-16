@@ -22,7 +22,6 @@ plotDataSubset<-function(targetData,targetPlotFile){
   par(bg="white")
   plot(targetData$Time,targetData$Global_active_power,ylab = "Global Active Power (kilowatts)",xaxt="n")
   axis(1,at=c(1,720,1440),labels = c("Thu","Fri","Sat"))
-  #lines(targetData$Time,targetData$Global_active_power)
   dev.copy(png,file = targetPlotFile)
   dev.off()
   print("Plot created.")
