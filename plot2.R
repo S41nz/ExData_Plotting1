@@ -20,8 +20,8 @@ loadDataSubset<-function(targetDataSetFile){
 plotDataSubset<-function(targetData,targetPlotFile){
   print(paste("Creating plot file at",targetPlotFile))
   par(bg="white")
-  plot(targetData$Time,targetData$Global_active_power,ylab = "Global Active Power (kilowatts)",xaxt="n")
-  axis(1,at=c(1,720,1440),labels = c("Thu","Fri","Sat"))
+  plot(targetData$Global_active_power,ylab = "Global Active Power (kilowatts)",xlab = NA,xaxt="n",type = "l")
+  axis(1,at=c(1,1440,2880),labels = c("Thu","Fri","Sat"))
   dev.copy(png,file = targetPlotFile)
   dev.off()
   print("Plot created.")
